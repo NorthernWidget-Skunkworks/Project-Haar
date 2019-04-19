@@ -6727,13 +6727,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <sheets>
 <sheet>
 <plain>
-<text x="55.88" y="63.5" size="1.778" layer="91">MOSI</text>
+<text x="58.42" y="86.36" size="1.778" layer="91">MOSI</text>
 <text x="55.88" y="83.82" size="1.778" layer="91">MISO</text>
 <text x="58.42" y="73.66" size="1.778" layer="91">SCK</text>
 <text x="58.42" y="71.12" size="1.778" layer="91">INT0</text>
-<text x="22.86" y="48.26" size="1.778" layer="91">Connect RH_INT 
-and RH_RST lines!</text>
-<text x="96.52" y="63.5" size="1.778" layer="91">Add BUCK_MODE!</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="30.48" y="30.48" smashed="yes">
@@ -7053,6 +7050,11 @@ and RH_RST lines!</text>
 <wire x1="91.44" y1="109.22" x2="86.36" y2="109.22" width="0.1524" layer="91"/>
 <label x="78.74" y="109.22" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="ISP1" gate="G$1" pin="MOSI"/>
+<wire x1="40.64" y1="129.54" x2="45.72" y2="129.54" width="0.1524" layer="91"/>
+<label x="43.18" y="129.54" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RX" class="0">
 <segment>
@@ -7100,11 +7102,6 @@ and RH_RST lines!</text>
 <pinref part="U2" gate="G$1" pin="SCL"/>
 <wire x1="109.22" y1="22.86" x2="114.3" y2="22.86" width="0.1524" layer="91"/>
 <label x="111.76" y="22.86" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="ISP1" gate="G$1" pin="MOSI"/>
-<wire x1="40.64" y1="129.54" x2="45.72" y2="129.54" width="0.1524" layer="91"/>
-<label x="43.18" y="129.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="!RESET" class="0">
@@ -7215,10 +7212,6 @@ and RH_RST lines!</text>
 </schematic>
 </drawing>
 <compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
