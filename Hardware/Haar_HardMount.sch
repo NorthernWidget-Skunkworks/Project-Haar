@@ -202,6 +202,14 @@ Ref &lt;a href = "https://media.digikey.com/pdf/Data%20Sheets/Sensirion%20PDFs/H
 <rectangle x1="1" y1="0.125" x2="1.55" y2="0.375" layer="31" rot="R180"/>
 <rectangle x1="1" y1="0.625" x2="1.55" y2="0.875" layer="31" rot="R180"/>
 <text x="0" y="-1.778" size="0.6096" layer="21" font="vector" ratio="15" align="center">&gt;NAME</text>
+<smd name="EP" x="0" y="0" dx="1" dy="1" layer="1" stop="no" cream="no"/>
+<polygon width="0.127" layer="29">
+<vertex x="-0.5" y="-0.85"/>
+<vertex x="-0.5" y="0.6"/>
+<vertex x="-0.25" y="0.85"/>
+<vertex x="0.5" y="0.85"/>
+<vertex x="0.5" y="-0.85"/>
+</polygon>
 </package>
 <package name="CCLGA10L">
 <description>Package for use with LPS35HW
@@ -473,10 +481,10 @@ Current: 0.2A ~ 4.9A &lt;/p&gt;
 <rectangle x1="-0.1001" y1="-0.4001" x2="0.1001" y2="0.4001" layer="35"/>
 </package>
 <package name="SOLDERCUP_CONN_QUAD">
-<smd name="2" x="-1.75" y="1.27" dx="2.5" dy="1" layer="1" rot="R90"/>
-<smd name="1" x="1.75" y="1.27" dx="2.5" dy="1" layer="1" rot="R90"/>
-<smd name="3" x="-1.75" y="1.27" dx="2.5" dy="1" layer="16" rot="R90"/>
-<smd name="4" x="1.75" y="1.27" dx="2.5" dy="1" layer="16" rot="R90"/>
+<smd name="2" x="-1.75" y="1.27" dx="2.5" dy="1" layer="1" rot="R90" cream="no"/>
+<smd name="1" x="1.75" y="1.27" dx="2.5" dy="1" layer="1" rot="R90" cream="no"/>
+<smd name="3" x="-1.75" y="1.27" dx="2.5" dy="1" layer="16" rot="R90" cream="no"/>
+<smd name="4" x="1.75" y="1.27" dx="2.5" dy="1" layer="16" rot="R90" cream="no"/>
 <wire x1="-2.54" y1="2.54" x2="-2.54" y2="0" width="0.127" layer="21"/>
 <wire x1="2.54" y1="0" x2="2.54" y2="2.54" width="0.127" layer="21"/>
 <wire x1="-2.54" y1="0" x2="-6.75" y2="0" width="0.127" layer="21"/>
@@ -515,14 +523,10 @@ Current: 0.2A ~ 4.9A &lt;/p&gt;
 </polygon>
 </package>
 <package name="SOT323">
-<wire x1="1.1224" y1="0.6604" x2="1.1224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.1224" y1="-0.6604" x2="-1.1224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.1224" y1="-0.6604" x2="-1.1224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.1224" y1="0.6604" x2="1.1224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-0.673" y1="0.7" x2="-1.1" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="-1.1" y1="0.7" x2="-1.1" y2="-0.354" width="0.2032" layer="21"/>
-<wire x1="0.673" y1="0.7" x2="1.1" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="1.1" y1="0.7" x2="1.1" y2="-0.354" width="0.2032" layer="21"/>
+<wire x1="1.1224" y1="0.6604" x2="1.1224" y2="-0.6604" width="0.1524" layer="21"/>
+<wire x1="1.1224" y1="-0.6604" x2="-1.1224" y2="-0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.1224" y1="-0.6604" x2="-1.1224" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.1224" y1="0.6604" x2="1.1224" y2="0.6604" width="0.1524" layer="21"/>
 <smd name="1" x="-0.65" y="-0.925" dx="0.7" dy="0.7" layer="1"/>
 <smd name="2" x="0.65" y="-0.925" dx="0.7" dy="0.7" layer="1"/>
 <smd name="3" x="0" y="0.925" dx="0.7" dy="0.7" layer="1"/>
@@ -547,22 +551,6 @@ Current: 0.2A ~ 4.9A &lt;/p&gt;
 <pad name="3" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
 <text x="-5.334" y="0.254" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
 <text x="5.334" y="0.254" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
-</package>
-<package name="SOT23-3">
-<description>SOT23-3</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-0.8" y1="0.7" x2="-1.4" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="-1.4" y1="0.7" x2="-1.4" y2="-0.1" width="0.2032" layer="21"/>
-<wire x1="0.8" y1="0.7" x2="1.4" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="1.4" y1="0.7" x2="1.4" y2="-0.1" width="0.2032" layer="21"/>
-<smd name="1" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
-<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
-<smd name="3" x="0" y="1.1" dx="0.8" dy="0.9" layer="1"/>
-<text x="-1.651" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
-<text x="1.651" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
 </package>
 <package name="TO-263/D2PAK">
 <wire x1="5" y1="-1" x2="5" y2="-3.4" width="0.2032" layer="21"/>
@@ -820,6 +808,18 @@ Soure: &lt;a href="http://www.ti.com/lit/ds/symlink/ads7042.pdf"&gt; Data sheet 
 <text x="0" y="-1.905" size="0.8128" layer="25" font="vector" ratio="15" rot="R180" align="center">&gt;NAME</text>
 <text x="-2.032" y="-1.397" size="0.6096" layer="21" font="vector" ratio="15" rot="R90" align="center">1</text>
 </package>
+<package name="SOT23-3">
+<description>SOT23-3</description>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<smd name="1" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
+<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
+<smd name="3" x="0" y="1.1" dx="0.8" dy="0.9" layer="1"/>
+<text x="-1.651" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="1.651" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="SHT3X">
@@ -1030,7 +1030,7 @@ Switches electronic signals</description>
 <connect gate="G$1" pin="SCL" pad="4"/>
 <connect gate="G$1" pin="SDA" pad="1"/>
 <connect gate="G$1" pin="VDD" pad="5"/>
-<connect gate="G$1" pin="VSS" pad="7 8"/>
+<connect gate="G$1" pin="VSS" pad="7 8 EP"/>
 </connects>
 <technologies>
 <technology name="">
