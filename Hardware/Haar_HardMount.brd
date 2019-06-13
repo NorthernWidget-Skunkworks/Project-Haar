@@ -8,7 +8,7 @@
 </settings>
 <grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
@@ -25,20 +25,20 @@
 <layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
@@ -651,21 +651,21 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="8.128" y="4.445" size="0.6096" layer="25" font="vector" ratio="15" rot="R180" align="center"/>
 <attribute name="VALUE" x="7.239" y="6.731" size="0.6096" layer="27" font="vector" ratio="15" rot="R180" align="center"/>
 </element>
-<element name="C3" library="bschulz_passives" package="C0402" value="" x="29.083" y="4.796" smashed="yes" rot="R90">
+<element name="C3" library="bschulz_passives" package="C0402" value="0.1uF" x="29.083" y="4.796" smashed="yes" rot="R90">
 <attribute name="DIGIKEY" value="490-4759-1-ND" x="53.213" y="21.306" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="Murata" x="53.213" y="21.306" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="GCM155R71C104KA55D" x="53.213" y="21.306" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="29.036" y="6.273" size="0.6096" layer="25" font="vector" ratio="15" rot="R180" align="center"/>
 <attribute name="VALUE" x="30.099" y="4.796" size="0.6096" layer="27" font="vector" ratio="15" rot="R90" align="center"/>
 </element>
-<element name="C4" library="bschulz_passives" package="C0402" value="" x="16.51" y="7.62" smashed="yes">
+<element name="C4" library="bschulz_passives" package="C0402" value="0.1uF" x="16.51" y="7.62" smashed="yes">
 <attribute name="DIGIKEY" value="490-4759-1-ND" x="36.83" y="-16.51" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="Murata" x="36.83" y="-16.51" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="GCM155R71C104KA55D" x="36.83" y="-16.51" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="16.51" y="8.509" size="0.6096" layer="25" font="vector" ratio="15" align="center"/>
 <attribute name="VALUE" x="16.51" y="6.604" size="0.6096" layer="27" font="vector" ratio="15" align="center"/>
 </element>
-<element name="C5" library="bschulz_passives" package="C0402" value="" x="13.843" y="2.667" smashed="yes" rot="R270">
+<element name="C5" library="bschulz_passives" package="C0402" value="0.1uF" x="13.843" y="2.667" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="490-4759-1-ND" x="-10.287" y="-21.463" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="Murata" x="-10.287" y="-21.463" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="GCM155R71C104KA55D" x="-10.287" y="-21.463" size="1.778" layer="27" rot="R270" display="off"/>
@@ -677,7 +677,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="2.366" y="7.662" size="0.6096" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="-1.651" y="6.312" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
-<element name="L1" library="bschulz" package="0805" value="" x="7.747" y="8.89" smashed="yes">
+<element name="L1" library="bschulz" package="0805" value="2.2uH" x="7.747" y="8.89" smashed="yes">
 <attribute name="NAME" x="5.715" y="8.89" size="0.6096" layer="25" font="vector" ratio="15" rot="R90" align="center"/>
 <attribute name="VALUE" x="7.747" y="7.493" size="0.6096" layer="27" font="vector" ratio="15" align="center"/>
 </element>

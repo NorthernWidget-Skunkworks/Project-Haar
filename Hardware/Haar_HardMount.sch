@@ -6705,19 +6705,19 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="U4" library="bschulz" deviceset="TPS6223*" device="DRY" technology="7"/>
 <part name="C1" library="bschulz_passives" deviceset="C-EU" device="C0402" value="4.7uF"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="L1" library="bschulz" deviceset="INDUCTOR" device="0805"/>
+<part name="L1" library="bschulz" deviceset="INDUCTOR" device="0805" value="2.2uH"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C2" library="bschulz_passives" deviceset="C-EU" device="C0402" value="4.7uF"/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C3" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF"/>
+<part name="C3" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF" value="0.1uF"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C4" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF"/>
+<part name="C4" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF" value="0.1uF"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="J1" library="bschulz" deviceset="SOLDERCUP_CONN_QUAD" device=""/>
 <part name="Q1" library="bschulz" deviceset="MOSFET-NCH" device="-2N7002PW" value="2N7002"/>
-<part name="C5" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF"/>
+<part name="C5" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF" value="0.1uF"/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R1" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="10K" value="10k"/>
 <part name="U5" library="bschulz" deviceset="TXS0102" device="DQM"/>
