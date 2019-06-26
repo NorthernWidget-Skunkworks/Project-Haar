@@ -4,13 +4,15 @@
 enum Sensor {
 	RH = 0,
 	Pressue = 1
-}
+};
 
 #define CTRL1 0x00
 #define TEMP_PRES 0x02
 #define TEMP_RH 0x04
-#define PRES_REG 0x05
+#define PRES_REG 0x06
 #define RH_REG 0x09
+
+uint8_t ADR = 0x40; //Global address
 
 Margay Logger(Model_2v0);
 
@@ -22,10 +24,20 @@ void setup()
 
 	Wire.begin();
 	Serial.begin(9600); //Initalze serial for output
+
+  Wire.beginTransmission(0x40);
+  Wire.write(0x00);
+  Wire.write(0x01);
+  Serial.println(Wire.endTransmission());
 }
 
 void loop() 
 {
+  Wire.beginTransmission(0x40);
+  Wire.write(0x00);
+  Wire.write(0x01);
+  Serial.println(Wire.endTransmission());
+  delay(5000);
 	//Print data
 	Serial.println("Begin Data...");
 	Serial.print("Temp, RH = "); Serial.print(GetTemp(RH)); Serial.println("°C");
@@ -38,22 +50,30 @@ void loop()
 
 float GetPressure()   //Returns pressure [mBar]
 {
-	int32_t Val = 0; //Val for getting/calculating pressure value
+	uint32_t Val = 0; //Val for getting/calculating pressure value
 	// uint8_t Data[3] = {0}; //Storage for byte values
-	Wire.beginTransmission(ADR);
-	Wire.write(PRES_REG);
-	Wire.endTransmission();
-	Wire.requestFrom(ADR, 3);
-	while(Wire.available() < 3); //Wait for data to be ready //FIX!!!
+//	Wire.beginTransmission(ADR);
+//	Wire.write(PRES_REG);
+//	Wire.endTransmission();
+//	Wire.requestFrom(ADR, 3);
+//	while(Wire.available() < 3); //Wait for data to be ready //FIX!!!
+  uint32_t Temp = 0; //DEBUG
 	for(int i = 0; i < 3; i++) {
 		// Data[i] = Wire.read(); //Read in 24 bit value
-		Val = (Val << 8) | Wire.read();
+//		Val = (Val << 8) | Wire.read();
+    Wire.beginTransmission(ADR);
+    Wire.write(PRES_REG + i);
+    Wire.endTransmission();
+    Wire.requestFrom(ADR, 1);
+    Temp = Wire.read(); //DEBUG!
+    Val = (Temp << 8*i) | Val; //DEBUG!
+//    Serial.println(Val, HEX); //DEBUG!
 	}
 	// Val = (Data[2] << 16) | (Data[1] << 8) | Data[0]; //Concatonate values 
 
-	if (Val & 0x800000){  //Sign extend if required 
-      Val = (0xFF000000 | Val);
-    }
+//	if (Val & 0x800000){  //Sign extend if required 
+//      Val = (0xFF000000 | Val);
+//    }
 
   	return (Val / 4096.0);
 }
@@ -88,9 +108,16 @@ uint16_t GetWord(uint8_t Reg)  //Returns word, read from Reg position
 	Wire.write(Reg);
 	Wire.endTransmission();
 
-	Wire.requestFrom(ADR, 2);  //Request word
-	while(Wire.available() < 2); //Wait //FIX! Add timeout
+	Wire.requestFrom(ADR, 1);  //Request word
+//	while(Wire.available() < 2); //Wait //FIX! Add timeout
 	Val = Wire.read();
+//  Serial.println(Val, HEX);
+
+  Wire.beginTransmission(ADR);
+  Wire.write(Reg + 1);
+  Wire.endTransmission();
+  Wire.requestFrom(ADR, 1);  //Request word
 	Val = Val | (Wire.read() << 8);  //Concatonate 16 bits 
+//  Val = Wire.read() | (Val << 8);  //Concatonate 16 bits //DEBUG!
 	return Val; 
 }
