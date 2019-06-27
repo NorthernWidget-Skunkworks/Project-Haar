@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.1">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8,7 +8,7 @@
 </settings>
 <grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
@@ -23,17 +23,17 @@
 <layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
 <layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
 <layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -46,10 +46,10 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
@@ -59,7 +59,7 @@
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -158,12 +158,17 @@
 </layers>
 <board>
 <plain>
-<wire x1="20.701" y1="10.084" x2="0" y2="10.084" width="0" layer="20"/>
-<wire x1="0" y1="10.084" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="20.701" y1="6.232" x2="20.701" y2="9.084" width="0" layer="20"/>
+<wire x1="20.701" y1="9.084" x2="19.701" y2="10.084" width="0" layer="20"/>
+<wire x1="19.701" y1="10.084" x2="1" y2="10.084" width="0" layer="20"/>
+<wire x1="1" y1="10.084" x2="0" y2="9.084" width="0" layer="20"/>
+<wire x1="0" y1="9.084" x2="0" y2="1" width="0" layer="20"/>
+<wire x1="0" y1="1" x2="1" y2="0" width="0" layer="20"/>
+<wire x1="1" y1="0" x2="19.701" y2="0" width="0" layer="20"/>
+<wire x1="19.701" y1="0" x2="20.701" y2="1" width="0" layer="20"/>
+<wire x1="20.701" y1="1" x2="20.701" y2="3.852" width="0" layer="20"/>
 <dimension x1="0" y1="0" x2="-1.27" y2="6.985" x3="-2.794" y3="3.4925" textsize="1.778" layer="47" dtype="vertical"/>
 <dimension x1="0" y1="0" x2="0" y2="10.033" x3="-6.604" y3="5.0165" textsize="1.778" layer="47" dtype="vertical"/>
-<wire x1="0" y1="0" x2="20.701" y2="0" width="0" layer="20"/>
-<wire x1="20.701" y1="0" x2="20.701" y2="3.852" width="0" layer="20"/>
 <wire x1="20.701" y1="3.852" x2="23.876" y2="3.852" width="0" layer="20"/>
 <wire x1="23.876" y1="3.852" x2="23.876" y2="2.659" width="0" layer="20"/>
 <wire x1="23.876" y1="2.659" x2="30.353" y2="2.659" width="0" layer="20"/>
@@ -171,7 +176,6 @@
 <wire x1="30.353" y1="7.425" x2="23.876" y2="7.425" width="0" layer="20"/>
 <wire x1="23.876" y1="7.425" x2="23.876" y2="6.232" width="0" layer="20"/>
 <wire x1="23.876" y1="6.232" x2="20.701" y2="6.232" width="0" layer="20"/>
-<wire x1="20.701" y1="6.232" x2="20.701" y2="10.084" width="0" layer="20"/>
 <dimension x1="0" y1="0" x2="20.701" y2="0" x3="10.3505" y3="-3.81" textsize="1.778" layer="47"/>
 <dimension x1="23.876" y1="2.667" x2="30.353" y2="2.667" x3="27.1145" y3="-7.62" textsize="1.778" layer="47"/>
 <dimension x1="30.353" y1="2.667" x2="30.353" y2="7.333" x3="35.56" y3="5" textsize="1.778" layer="47"/>
