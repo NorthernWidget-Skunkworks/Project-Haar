@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.1">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -219,10 +219,8 @@ Ref &lt;a href = "https://www.st.com/resource/en/datasheet/lps35hw.pdf"&gt;Datas
 <wire x1="1.99" y1="1.99" x2="1.99" y2="-1.99" width="0.05" layer="39"/>
 <wire x1="1.99" y1="-1.99" x2="-1.99" y2="-1.99" width="0.05" layer="39"/>
 <wire x1="-1.99" y1="-1.99" x2="-1.99" y2="1.99" width="0.05" layer="39"/>
-<circle x="-2.4" y="1" radius="0.1" width="0.2" layer="21"/>
-<circle x="-2.4" y="1" radius="0.1" width="0.2" layer="21"/>
 <text x="0" y="2.40255" size="0.6096" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
-<text x="-2.003340625" y="-3.005009375" size="0.81415625" layer="27">&gt;VALUE</text>
+<text x="0" y="-2.413" size="0.6096" layer="27" font="vector" ratio="15" align="center">&gt;VALUE</text>
 <wire x1="-1.83" y1="1.83" x2="-1.1" y2="1.83" width="0.127" layer="21"/>
 <wire x1="-1.83" y1="1.83" x2="-1.83" y2="0.8" width="0.127" layer="21"/>
 <wire x1="1.1" y1="1.83" x2="1.83" y2="1.83" width="0.127" layer="21"/>
@@ -241,6 +239,7 @@ Ref &lt;a href = "https://www.st.com/resource/en/datasheet/lps35hw.pdf"&gt;Datas
 <smd name="8" x="0.6" y="1.42" dx="0.63" dy="0.4" layer="1" rot="R270"/>
 <smd name="9" x="0" y="1.42" dx="0.63" dy="0.4" layer="1" rot="R270"/>
 <smd name="10" x="-0.6" y="1.42" dx="0.63" dy="0.4" layer="1" rot="R270"/>
+<circle x="-2.286" y="1.778" radius="0.127" width="0.127" layer="21"/>
 </package>
 <package name="QFN20">
 <wire x1="-2.032" y1="-1.532" x2="-2.032" y2="-2.032" width="0.127" layer="21"/>
@@ -819,6 +818,18 @@ Soure: &lt;a href="http://www.ti.com/lit/ds/symlink/ads7042.pdf"&gt; Data sheet 
 <smd name="3" x="0" y="1.1" dx="0.8" dy="0.9" layer="1"/>
 <text x="-1.651" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
 <text x="1.651" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
+</package>
+<package name="SC-89">
+<description>SC-89, SOT-490, EMT3F, SOT-416FL
+&lt;br&gt;&lt;a href = "https://www.rohm.com/datasheet/RE1C002UN/re1c002untcl-e"&gt;Referance Data Sheet&lt;/a&gt;</description>
+<smd name="1" x="-0.5" y="-0.525" dx="0.65" dy="0.46" layer="1" rot="R90"/>
+<smd name="2" x="0.5" y="-0.525" dx="0.65" dy="0.46" layer="1" rot="R90"/>
+<smd name="3" x="0" y="0.525" dx="0.65" dy="0.46" layer="1" rot="R90"/>
+<wire x1="-0.8" y1="0.425" x2="0.8" y2="0.425" width="0.127" layer="21"/>
+<wire x1="0.8" y1="0.425" x2="0.8" y2="-0.425" width="0.127" layer="21"/>
+<wire x1="0.8" y1="-0.425" x2="-0.8" y2="-0.425" width="0.127" layer="21"/>
+<wire x1="-0.8" y1="-0.425" x2="-0.8" y2="0.425" width="0.127" layer="21"/>
+<text x="-1.27" y="0" size="0.6096" layer="25" font="vector" ratio="15" rot="R90" align="center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -1498,6 +1509,20 @@ Features:
 <attribute name="MF" value="Diodes Incorporated" constant="no"/>
 <attribute name="MPN" value="DMG3404L-7" constant="no"/>
 <attribute name="VALUE" value="DMG3404" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-RE1C002UN" package="SC-89">
+<connects>
+<connect gate="NMOS" pin="D" pad="3"/>
+<connect gate="NMOS" pin="G" pad="1"/>
+<connect gate="NMOS" pin="S" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="RE1C002UNTCLCT-ND" constant="no"/>
+<attribute name="MF" value="Rohm" constant="no"/>
+<attribute name="MPN" value="RE1C002UNTCL" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -4839,6 +4864,16 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="MF" value="TDK" constant="no"/>
 <attribute name="MPN" value="CGA2B2C0G1H120J050BA" constant="no"/>
 </technology>
+<technology name="220PF">
+<attribute name="DIGIKEY" value="587-1215-1-ND" constant="no"/>
+<attribute name="MF" value="Taiyo Yuden" constant="no"/>
+<attribute name="MPN" value="UMK105CG221JV-F" constant="no"/>
+</technology>
+<technology name="56PF">
+<attribute name="DIGIKEY" value="311-1022-1-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="CC0402JRNPO9BN560" constant="no"/>
+</technology>
 <technology name="68PF">
 <attribute name="DIGIKEY" value="732-7474-1-ND" constant="no"/>
 <attribute name="MF" value="Wurth" constant="no"/>
@@ -4881,20 +4916,40 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="MF" value="Samsung" constant="no"/>
 <attribute name="MPN" value="CL10B474KA8NNNC" constant="no"/>
 </technology>
+<technology name="10UF">
+<attribute name="DIGIKEY" value="490-10728-1-ND" constant="no"/>
+<attribute name="MF" value="Murata" constant="no"/>
+<attribute name="MPN" value="GRM188R61C106KAALD" constant="no"/>
+</technology>
 <technology name="12PF">
 <attribute name="DIGIKEY" value="490-6197-1-ND" constant="no"/>
 <attribute name="MF" value="Murata" constant="no"/>
 <attribute name="MPN" value="GRM1555C1H120GA01D" constant="no"/>
+</technology>
+<technology name="1NF">
+<attribute name="DIGIKEY" value="311-1080-1-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="CC0603KRX7R9BB102" constant="no"/>
 </technology>
 <technology name="1UF">
 <attribute name="DIGIKEY" value="490-10479-1-ND" constant="no"/>
 <attribute name="MF" value="Murata" constant="no"/>
 <attribute name="MPN" value="GRM188R61C105KA12D" constant="no"/>
 </technology>
+<technology name="2.2NF">
+<attribute name="DIGIKEY" value="311-1081-1-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="CC0603KRX7R9BB222" constant="no"/>
+</technology>
 <technology name="2.2UF">
 <attribute name="DIGIKEY" value="1276-1183-1-ND" constant="no"/>
 <attribute name="MF" value="Samsung" constant="no"/>
 <attribute name="MPN" value="CL10A225KQ8NNNC" constant="no"/>
+</technology>
+<technology name="680PF">
+<attribute name="DIGIKEY" value="311-1188-1-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="CC0603KRX7R9BB681" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -5645,10 +5700,16 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="MPN" value="RC0402FR-07100RL" constant="no"/>
 <attribute name="VALUE_PART" value="100" constant="no"/>
 </technology>
-<technology name="10K">
-<attribute name="DIGIKEY" value="311-10KJRCT-ND" constant="no"/>
+<technology name="100K">
+<attribute name="DIGIKEY" value="311-100KLRCT-ND" constant="no"/>
 <attribute name="MF" value="Yageo" constant="no"/>
-<attribute name="MPN" value="RC0402JR-0710KL" constant="no"/>
+<attribute name="MPN" value="RC0402FR-07100KL" constant="no"/>
+<attribute name="VALUE_PART" value="100k" constant="no"/>
+</technology>
+<technology name="10K">
+<attribute name="DIGIKEY" value="311-10.0KHRCT-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0603FR-0710KL" constant="no"/>
 <attribute name="VALUE_PART" value="10k" constant="no"/>
 </technology>
 <technology name="120K">
@@ -5656,6 +5717,24 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="MF" value="Yageo" constant="no"/>
 <attribute name="MPN" value="RC0402FR-07120KL" constant="no"/>
 <attribute name="VALUE_PART" value="120k" constant="no"/>
+</technology>
+<technology name="180K">
+<attribute name="DIGIKEY" value="311-180KLRCT-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0402FR-07180KL" constant="no"/>
+<attribute name="VALUE_PART" value="180k" constant="no"/>
+</technology>
+<technology name="1K">
+<attribute name="DIGIKEY" value="311-1.00KLRCT-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0402FR-071KL" constant="no"/>
+<attribute name="VALUE_PART" value="1k" constant="no"/>
+</technology>
+<technology name="1M">
+<attribute name="DIGIKEY" value="311-1.00MLRCT-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0402FR-071ML" constant="no"/>
+<attribute name="VALUE_PART" value="1M" constant="no"/>
 </technology>
 <technology name="20">
 <attribute name="DIGIKEY" value="311-20LRCT-ND" constant="no"/>
@@ -5737,10 +5816,16 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="MPN" value="RMCF0603FT1M62" constant="no"/>
 <attribute name="VALUE_PART" value="1.62M" constant="no"/>
 </technology>
+<technology name="100K">
+<attribute name="DIGIKEY" value="RC0402FR-071ML" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0603FR-07100KL" constant="no"/>
+<attribute name="VALUE_PART" value="100k" constant="no"/>
+</technology>
 <technology name="10K">
-<attribute name="DIGIKEY" value="P10.0KHCT-ND" constant="no"/>
-<attribute name="MF" value="Panasonic" constant="no"/>
-<attribute name="MPN" value="ERJ-3EKF1002V" constant="no"/>
+<attribute name="DIGIKEY" value="311-10.0KHRCT-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0603FR-0710KL" constant="no"/>
 <attribute name="VALUE_PART" value="10k" constant="no"/>
 </technology>
 <technology name="10M">
@@ -5821,6 +5906,12 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="MPN" value="RC0603FR-07360KL" constant="no"/>
 <attribute name="VALUE_PART" value="360k" constant="no"/>
 </technology>
+<technology name="422K">
+<attribute name="DIGIKEY" value="311-422KHRCT-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0603FR-07422KL" constant="no"/>
+<attribute name="VALUE_PART" value="422k" constant="no"/>
+</technology>
 <technology name="470">
 <attribute name="DIGIKEY" value="311-470HRCT-ND" constant="no"/>
 <attribute name="MF" value="Yageo" constant="no"/>
@@ -5869,6 +5960,18 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="MPN" value="ERA-3AEB102V" constant="no"/>
 <attribute name="VALUE_PART" value="1k" constant="no"/>
 </technology>
+<technology name="P27K">
+<attribute name="DIGIKEY" value="P27KDBCT-ND" constant="no"/>
+<attribute name="MF" value="Panasonic" constant="no"/>
+<attribute name="MPN" value="ERA-3AEB273V" constant="no"/>
+<attribute name="VALUE_PART" value="27k" constant="no"/>
+</technology>
+<technology name="P30K">
+<attribute name="DIGIKEY" value="P30KDBCT-ND" constant="no"/>
+<attribute name="MF" value="Panasonic" constant="no"/>
+<attribute name="MPN" value="ERA-3AEB303V" constant="no"/>
+<attribute name="VALUE_PART" value="30k" constant="no"/>
+</technology>
 <technology name="P62K">
 <attribute name="DIGIKEY" value="P62KDBCT-ND" constant="no"/>
 <attribute name="MF" value="Panasonic" constant="no"/>
@@ -5897,6 +6000,21 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="DIGIKEY" value="PMR10EZPFU5L00" constant="no"/>
 <attribute name="MF" value="Rohm" constant="no"/>
 <attribute name="MPN" value="PMR10EZPFU5L00" constant="no"/>
+</technology>
+<technology name="0.01">
+<attribute name="DIGIKEY" value="CRF0805-FZ-R010ELFCT-ND" constant="no"/>
+<attribute name="MF" value="Bourns" constant="no"/>
+<attribute name="MPN" value="CRF0805-FZ-R010ELF" constant="no"/>
+</technology>
+<technology name="0.05">
+<attribute name="DIGIKEY" value="P50LLCT-ND" constant="no"/>
+<attribute name="MF" value="Panasonic" constant="no"/>
+<attribute name="MPN" value="ERJ-L06KF50MV" constant="no"/>
+</technology>
+<technology name="0.1">
+<attribute name="DIGIKEY" value="P19308CT-ND" constant="no"/>
+<attribute name="MF" value="Panasonic" constant="no"/>
+<attribute name="MPN" value="ERJ-6DSFR10V" constant="no"/>
 </technology>
 <technology name="P1M">
 <attribute name="DIGIKEY" value="P1MDACT-ND" constant="no"/>
@@ -6723,6 +6841,8 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="U5" library="bschulz" deviceset="TXS0102" device="DQM"/>
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="ISP1" library="bschulz" deviceset="AVRISP" device="1.27MM"/>
+<part name="R2" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="10K"/>
+<part name="R3" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="10K"/>
 </parts>
 <sheets>
 <sheet>
@@ -6816,6 +6936,14 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </instance>
 <instance part="ISP1" gate="G$1" x="25.4" y="129.54" smashed="yes">
 <attribute name="NAME" x="22.86" y="121.92" size="1.778" layer="95"/>
+</instance>
+<instance part="R2" gate="G$1" x="22.86" y="106.68" smashed="yes" rot="R90">
+<attribute name="NAME" x="21.3614" y="102.87" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="26.162" y="102.87" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R3" gate="G$1" x="30.48" y="106.68" smashed="yes" rot="R90">
+<attribute name="NAME" x="28.9814" y="102.87" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="33.782" y="102.87" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -7021,6 +7149,16 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="40.64" y1="132.08" x2="45.72" y2="132.08" width="0.1524" layer="91"/>
 <label x="43.18" y="132.08" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="22.86" y1="111.76" x2="22.86" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="114.3" x2="30.48" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="30.48" y1="114.3" x2="30.48" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="114.3" x2="35.56" y2="114.3" width="0.1524" layer="91"/>
+<junction x="30.48" y="114.3"/>
+<label x="35.56" y="114.3" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="SCL_EXT" class="0">
 <segment>
@@ -7086,6 +7224,12 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="109.22" y1="25.4" x2="114.3" y2="25.4" width="0.1524" layer="91"/>
 <label x="111.76" y="25.4" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="30.48" y1="101.6" x2="30.48" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="96.52" x2="22.86" y2="96.52" width="0.1524" layer="91"/>
+<label x="22.86" y="96.52" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -7102,6 +7246,12 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="U2" gate="G$1" pin="SCL"/>
 <wire x1="109.22" y1="22.86" x2="114.3" y2="22.86" width="0.1524" layer="91"/>
 <label x="111.76" y="22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="22.86" y1="101.6" x2="22.86" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="99.06" x2="15.24" y2="99.06" width="0.1524" layer="91"/>
+<label x="15.24" y="99.06" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="!RESET" class="0">
