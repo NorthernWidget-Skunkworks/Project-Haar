@@ -14,7 +14,7 @@ enum Sensor {
 
 uint8_t ADR = 0x40; //Global address
 
-Margay Logger(Model_2v0);
+Margay Logger(Model_1v0, Build_B);
 
 void setup() 
 {
@@ -37,7 +37,7 @@ void loop()
   Wire.write(0x00);
   Wire.write(0x01);
   Serial.println(Wire.endTransmission());
-  delay(5000);
+  delay(50);
 	//Print data
 	Serial.println("Begin Data...");
 	Serial.print("Temp, RH = "); Serial.print(GetTemp(RH)); Serial.println("°C");

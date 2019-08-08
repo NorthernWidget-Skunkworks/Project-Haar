@@ -41,6 +41,7 @@ uint8_t Config = 0; //Global config value
 
 uint8_t Reg[10] = {0}; //Initialize registers
 bool Sample = true; //Flag used to start a new converstion
+bool Sleep = false; //Used to put the device into deep sleep //ADD
 bool Startup = false; 
 
 uint16_t ST, SRH; //Global values for RH sensor (FIX!!!!)
@@ -54,6 +55,8 @@ volatile uint8_t RegID = 0; //Used to denote which register will be read from
 volatile bool RepeatedStart = false; //Used to show if the start was repeated or not
 
 void setup() {
+	pinMode(15, OUTPUT); //DEBUG!
+	digitalWrite(15, HIGH); //DEBUG!
 	Reg[0] = 0x00; //Set Config to POR value
 	Wire.begin(ADR);  //Begin slave I2C
 
@@ -63,17 +66,19 @@ void setup() {
 	Wire.onStop(stopEvent);
 
   	si.i2c_init(); //Begin I2C master
-  	Serial.begin(4800); //DEBUG!
+  	// Serial.begin(4800); //DEBUG!
   	RHreset(); //Reset RH sensor on startup 
   	PresReset(); //Reset pressure sensor on startup
 
   	WriteByte(LPS35HW_ADDR, LPS35HW_CTRL_REG3, 0x40);; //Setup 50Hz data rate //DEBUG!
+
 }
 
 void loop() {
 	Sample = BitRead(Reg[0], 0);
 
 	if(Sample == true || Startup == false) {  //FIX!!! Make first conversion cleaner 
+		WriteByte(LPS35HW_ADDR, LPS35HW_CTRL_REG2, LPS35HW_CTRL_REG2_DEFAULT | 0x01); //Set ONE_SHOT bit in order to trigger new conversion for pressure
 		readRH(); //Get new temp/RH values
 		SplitAndLoad(0x04, ST); //Load temp from RH sensor
 		SplitAndLoad(0x09, SRH); //Load RH 
@@ -88,8 +93,10 @@ void loop() {
 	// ADCSRA &= ~(1<<ADEN); //Disable ADC
 	// SPCR   &= ~_BV(SPE); //Disable SPI
 	//    PRR = 0xFF;
-		set_sleep_mode(SLEEP_MODE_PWR_DOWN);  
+  	digitalWrite(15, LOW); //DEBUG!
 
+	if(Sleep) set_sleep_mode(SLEEP_MODE_PWR_DOWN);  
+	else set_sleep_mode(SLEEP_MODE_STANDBY);
 	sleep_enable();
 	sleep_mode(); //Waits here while in sleep mode
 
@@ -98,7 +105,8 @@ void loop() {
 	Wire.begin(ADR);
 	si.i2c_init(); //Begin I2C master
 
-	delay(1);
+
+	delay(10); //DEBUG!
 }
 
 uint16_t readStatusRH(void) {
@@ -143,7 +151,7 @@ void heater(boolean h) {
 //   return SRH;
 // }
 bool ReadPres(void) {
-	WriteByte(LPS35HW_ADDR, LPS35HW_CTRL_REG2, LPS35HW_CTRL_REG2_DEFAULT | 0x01); //Set ONE_SHOT bit in order to trigger new conversion
+	// WriteByte(LPS35HW_ADDR, LPS35HW_CTRL_REG2, LPS35HW_CTRL_REG2_DEFAULT | 0x01); //Set ONE_SHOT bit in order to trigger new conversion
 	unsigned long Timeout = millis();
 	bool Done = false; //Flag to wait for new data
 	while((millis() - Timeout) < ReadTimeout && !Done) {
@@ -168,7 +176,7 @@ boolean readRH(void) {
 
   writeCommand(SHT31_MEAS_HIGHREP);
   
-  delay(500);
+  delay(30);  //FIX! Read byte and test for NACK value
   // Wire.requestFrom(SHT31_ADDR, (uint8_t)6);
   si.i2c_start((SHT31_ADDR << 1) | READ);
   // if (Wire.available() != 6) //FIX??
