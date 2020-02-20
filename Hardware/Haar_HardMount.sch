@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.2">
+<eagle version="9.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6821,11 +6821,23 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="U2" library="bschulz" deviceset="LPS3*HW" device="" technology="5"/>
 <part name="U3" library="bschulz" deviceset="ATTINY1634" device="QFN"/>
 <part name="U4" library="bschulz" deviceset="TPS6223*" device="DRY" technology="7"/>
-<part name="C1" library="bschulz_passives" deviceset="C-EU" device="C0402" value="4.7uF"/>
+<part name="C1" library="bschulz_passives" deviceset="C-EU" device="C0402" value="4.7uF">
+<attribute name="DIGIKEY" value="490-14306-1-ND"/>
+<attribute name="MF" value="Murata"/>
+<attribute name="MPN" value="GRM155R61A475MEAAD"/>
+</part>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="L1" library="bschulz" deviceset="INDUCTOR" device="0805" value="2.2uH"/>
+<part name="L1" library="bschulz" deviceset="INDUCTOR" device="0805" value="2.2uH">
+<attribute name="DIGIKEY" value="732-2953-1-ND"/>
+<attribute name="MF" value="Wurth"/>
+<attribute name="MPN" value="74479775222"/>
+</part>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C2" library="bschulz_passives" deviceset="C-EU" device="C0402" value="4.7uF"/>
+<part name="C2" library="bschulz_passives" deviceset="C-EU" device="C0402" value="4.7uF">
+<attribute name="DIGIKEY" value="490-14306-1-ND"/>
+<attribute name="MF" value="Murata"/>
+<attribute name="MPN" value="GRM155R61A475MEAAD"/>
+</part>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C3" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF" value="0.1uF"/>
@@ -6841,8 +6853,8 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="U5" library="bschulz" deviceset="TXS0102" device="DQM"/>
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="ISP1" library="bschulz" deviceset="AVRISP" device="1.27MM"/>
-<part name="R2" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="10K"/>
-<part name="R3" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="10K"/>
+<part name="R2" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="10K" value="10k"/>
+<part name="R3" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="10K" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -6878,6 +6890,9 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instance part="L1" gate="G$1" x="129.54" y="88.9" smashed="yes" rot="R90">
 <attribute name="NAME" x="134.62" y="87.63" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="134.62" y="92.71" size="1.778" layer="96" rot="R180"/>
+<attribute name="DIGIKEY" x="129.54" y="88.9" size="2.54" layer="96" rot="R90" display="off"/>
+<attribute name="MF" x="129.54" y="88.9" size="2.54" layer="96" rot="R90" display="off"/>
+<attribute name="MPN" x="129.54" y="88.9" size="2.54" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="GND2" gate="1" x="121.92" y="76.2" smashed="yes">
 <attribute name="VALUE" x="119.38" y="73.66" size="1.778" layer="96"/>
