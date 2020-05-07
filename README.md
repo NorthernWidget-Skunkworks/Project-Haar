@@ -13,10 +13,7 @@ Project Haar takes its codename from the [North Sea fogs that roll across Britai
 Determined to avoid future issues with persistently condensing humidity, we worked to design a unit that would survive in this environment, and indeed, withstand full submersion.
 
 ## Technical specifications
-
-![Haar: in housing](Documentation/images/Haar_v010_in_housing_20200228.png)
-
->> Add annotated board photo up here
+![Haar bare board](Documentation/images/Haar_v010_top_annotated_20200427.png)
 
 ### Electronic Hardware
 
@@ -67,6 +64,8 @@ Determined to avoid future issues with persistently condensing humidity, we work
 ### Weatherproofing and enclosure
 * Low-VOC conformal coating
 * Fully sealed housing with removable Gore-Tex vent
+
+![Haar: in housing](Documentation/images/Haar_v010_in_housing_20200228.png)
 
 ## Assembly
 
