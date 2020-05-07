@@ -50,3 +50,6 @@ eagle.epf
 
 # file locks introduced since 7.x
 *.lck
+
+# Additional temporary files
+*.swp
