@@ -80,7 +80,7 @@ Many components on this board are fine pitch and/or have difficult to access pad
 >> THOUGHT: I have basic instructions for assembly on the [Project Walrus](https://github.com/NorthernWidget-Skunkworks/Project-TPDH-Walrus) README; I will not reproduce these here just yet, as we might want to set up a separate assembly guide, mostly with good links to existing resources, since our writing something of this nature would be to reinvent the wheel.
 
 
-## Uploading the firmware
+## Firmware
 
 ### Downloading and installing the Arduino IDE
 
