@@ -20,7 +20,7 @@ Determined to avoid future issues with persistently condensing humidity, we work
 * Microcontroller (computer) core
   * ATTiny1634
   * [Firmware](Firmware) written in Arduino-compatible C++
-  * Firmware upload via a 0.05" (1.27 mm) pitch 2x3 ICSP header
+  * Firmware upload via a [0.05" (1.27 mm) pitch 2x3 ICSP header](https://www.digikey.com/product-detail/en/samtec-inc/FTS-103-01-L-D/SAM1156-03-ND/1109979)
 * Sensors
   * Relative humidity and temperature sensor: [SHT35-DIS-F2.5KS](https://www.digikey.com/product-detail/en/sensirion-ag/SHT35-DIS-F2.5KS/1649-1067-1-ND/6212138) with [PTFE membrane](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_Filter_Membrane.pdf) for water and dust protection
     * Humidity
@@ -88,7 +88,7 @@ Go to https://www.arduino.cc/en/main/software. Choose the proper IDE version for
 
 ### AVR ISP
 
-To install firmware on the Haar board, you use the 2x3-pin 6-pin ICSP (also called ISP) header with a special device called an "in-circuit system programmer" (or just "in-system programmer; yup, that's what the acronym stands for).
+To install firmware on the Haar board, you use the [2x3-pin 6-pin ICSP (also called ISP) header](https://www.digikey.com/product-detail/en/samtec-inc/FTS-103-01-L-D/SAM1156-03-ND/1109979) with a special device called an "in-circuit system programmer" (or just "in-system programmer; yup, that's what the acronym stands for).
 
 Many devices exist to upload a bootloader including:
 * The official [AVR ISP mkII](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf) (no longer produced but available used)
@@ -96,7 +96,7 @@ Many devices exist to upload a bootloader including:
 * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
 * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
 
-**IMPORTANT:** The Haar has a half-sized (0.05" pitch) ICSP header. Therefore, you will need to have the appropriate 2x3-pin header to form a connection.
+**IMPORTANT:** The Haar has a [half-sized (0.05" pitch) ICSP header](https://www.digikey.com/product-detail/en/samtec-inc/FTS-103-01-L-D/SAM1156-03-ND/1109979). Therefore, you will need to have the appropriate 2x3-pin header to form a connection.
 
 ### Uploading the firmware
 
