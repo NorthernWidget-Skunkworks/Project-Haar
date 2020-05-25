@@ -102,17 +102,16 @@ Many devices exist to upload a bootloader including:
 
 Using this ISP, upload (as of the time of writing): [the Arduino sketch in this folder](Firmware/LiDAR_InterfaceDemo/). To do so, follow these steps:
 
-1. Open the Arduino IDE. **MIGHTY CORE LIBRARIES NEEDED???**
-2. Select the desired board -- **look up mighty core**
-3. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
-4. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
-5. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
+1. Open the Arduino IDE.
+2. Follow [these instructions](https://github.com/SpenceKonde/ATTinyCore/blob/master/Installation.md) to install the [ATTinyCore board definitions](https://github.com/SpenceKonde/ATTinyCore)
+3. Select [ATTiny1634](https://github.com/SpenceKonde/ATTinyCore/blob/master/avr/extras/ATtiny_1634.md) without bootloader
+4. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
+5. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
+6. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
 
 ![Upload using programmer](Documentation/images/UploadUsingProgrammer.png)
 
 ***Uploading using the in-system programmer.***
-
->> @bschulz1701: MightyCore library needed? Just the normal 1634 or anything special?
 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
