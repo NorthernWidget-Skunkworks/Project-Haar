@@ -90,7 +90,7 @@ Go to https://www.arduino.cc/en/main/software. Choose the proper IDE version for
 
 To install firmware on the Haar board, you use the [2x3-pin 6-pin ICSP (also called ISP) header](https://www.digikey.com/product-detail/en/samtec-inc/FTS-103-01-L-D/SAM1156-03-ND/1109979) with a special device called an "in-circuit system programmer" (or just "in-system programmer; yup, that's what the acronym stands for).
 
-Many devices exist to upload a bootloader including:
+Many devices exist to upload firmware, including:
 * The official [AVR ISP mkII](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf) (no longer produced but available used)
 * Using an [Arduino as an ISP](https://www.arduino.cc/en/tutorial/arduinoISP)
 * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
