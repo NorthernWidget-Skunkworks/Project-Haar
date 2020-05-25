@@ -104,18 +104,15 @@ Using this ISP, upload (as of the time of writing): [the Arduino sketch in this 
 
 1. Open the Arduino IDE. **MIGHTY CORE LIBRARIES NEEDED???**
 2. Select the desired board -- **look up mighty core**
-3. **power needed beyond ISP?**
-4. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around.
-5. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
-6. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
+3. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
+4. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
+5. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
 
 ![Upload using programmer](Documentation/images/UploadUsingProgrammer.png)
 
 ***Uploading using the in-system programmer.***
 
 >> @bschulz1701: MightyCore library needed? Just the normal 1634 or anything special?
-
->> @bschulz1701: Any power supply needed beyond what ICSP header provides?
 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
@@ -259,11 +256,16 @@ void init(){
 ### Parts required
 
 * [Sealing plug with cable](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497)
-* [3D-printed housing barrel](3Dprint), tapped
+* [3D-printed housing barrel](3Dprint), tapped (see below). We recommmend light-colored plastic to reduce radiative heating.
 * [4-pin hard mount plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165)
-* Amphenol Gore-Tex vent
+* [Amphenol breathable vent](https://www.digikey.com/product-detail/en/amphenol-ltw/VENT-PS1NGY-O8002/1754-1221-ND/7898276)
 
->> @bschulz1701: what kind of taps required?
+### Tapping the housing
+
+3D-printed housing barrel:
+* Cable side: M16 x 1.5
+* Vent side: M12 x 1.5
+
 >> @bschulz1701: what pinout colors
 
 
