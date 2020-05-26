@@ -63,7 +63,7 @@ Determined to avoid future issues with persistently condensing humidity, we work
 
 ### Weatherproofing and enclosure
 * Low-VOC conformal coating
-* Fully sealed housing with removable Gore-Tex vent
+* Fully sealed housing with removable [breathable-membrane (IP68) vent](https://www.digikey.com/product-detail/en/amphenol-ltw/VENT-PS1NGY-O8002/1754-1221-ND/7898276)
 
 ![Haar: in housing](Documentation/images/Haar_v010_in_housing_20200228.png)
 
@@ -261,7 +261,7 @@ void init(){
 
 ### Tapping the housing
 
-3D-printed housing barrel:
+3D-printed housing barrel tap dimensions:
 * Cable side: M16 x 1.5
 * Vent side: M12 x 1.5
 
