@@ -267,6 +267,15 @@ void init(){
 
 >> @bschulz1701: what pinout colors
 
+## Characterization
+
+### Response time
+
+![Lab fridge test](Documentation/images/Haar_T9602_vent_test_lab_fridge.png)
+
+***Response-time testing.*** *Our initial tests demonstrate that, with the vent detached, the Haar exhibits sensitivity and response time similar to the [T9602 temperature and relative humidity sensor](https://www.amphenol-sensors.com/images/stories/moisture-humidity/main-T9602-Mod-4.png). With the vent cap on, this response is dampened significantly.*
+
+>> @bschulz1701: Application note about when to use the cap? Notes about the IP ratings of the devices and practical ratings as well? And I've been looking for a M12 vent without any membrane so it can still physically protect the sensor (or act as a roof for rain) but have not yet found one. Thoughts on this?
 
 <br>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
