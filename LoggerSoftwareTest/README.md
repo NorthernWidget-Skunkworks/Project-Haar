@@ -1,0 +1,1 @@
+`Haar_InterfaceDev.ino` is a development script used for testing the functionality of the Haar firmware be reading from the device (this code is meant to be run on the logger side for testing and development only) 
