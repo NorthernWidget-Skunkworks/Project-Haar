@@ -109,7 +109,7 @@ Using this ISP, upload (as of the time of writing): [the Arduino sketch in this 
 5. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
 6. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
 
-![Upload using programmer](Documentation/images/UploadUsingProgrammer.png)
+![Upload using programmer](https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/master/Documentation/images/UploadUsingProgrammer.png)
 
 ***Uploading using the in-system programmer.***
 
