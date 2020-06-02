@@ -69,6 +69,8 @@ Determined to avoid future issues with persistently condensing humidity, we work
 
 ## Assembly
 
+### Sensor circuit board
+
 Assembling this sensor is possible by hand with sufficient skill and the following tools:
 * Temperature-controlled soldering iron
 * Hot-air rework station
@@ -78,6 +80,44 @@ Assembling this sensor is possible by hand with sufficient skill and the followi
 
 Many components on this board are fine pitch and/or have difficult to access pads. However, there are not very many components. We would suggest hand assembly using tweezers, stenciled solder paste, and a hot-air rework station. A soldering iron will be helpful -- if not outright essential -- for attaching the "Hard Mount" plug and (if desired) the 2x3 pin ICSP header to upload the firmware.
 >> THOUGHT: I have basic instructions for assembly on the [Project Walrus](https://github.com/NorthernWidget-Skunkworks/Project-TPDH-Walrus) README; I will not reproduce these here just yet, as we might want to set up a separate assembly guide, mostly with good links to existing resources, since our writing something of this nature would be to reinvent the wheel.
+
+After finishing the main board assembly, solder the HardMount plug onto the four SMD pads with the notch (for plug orientation) at the bottom side of the board.
+
+### Housing and cabling
+
+![Haar: exploded view](Documentation/images/Haar_v010_and_housing_exploded_20200228.png)
+
+#### Parts required
+
+* [Sealing plug with cable](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497); these come in [a variety of lengths from 0.6 to 20 meters](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105) ([Digi-Key search results](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire)). You may also [attach a plug to your own cable](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/FieldAttachable/200ARS7).
+* [3D-printed housing barrel](3Dprint), tapped (see below). We recommmend light-colored plastic to reduce radiative heating.
+* [4-pin HardMount plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165)
+* [Amphenol breathable vent](https://www.digikey.com/product-detail/en/amphenol-ltw/VENT-PS1NGY-O8002/1754-1221-ND/7898276)
+
+#### Tapping the housing
+
+3D-printed housing barrel tap dimensions:
+* Cable side: M16 x 1.5
+* Vent side: M12 x 1.5
+
+#### Cable
+
+Here we assume that you are using standard AlphaWire cables with waterproof attachments, as linked above. Because of the wire insulation colors available for these cables, **our HardMount devices do NOT match standard wire-color definitions**. Wire-color definitions are:
+
+| **Color** | **Connection** |
+|-----------|----------------|
+| White     | V+ (3.3-5.0 V) |
+| Brown     | GND            |
+| Black     | SDA            |
+| Blue      | SCL            |
+
+>> @bschulz1701: is the voltage range correct?
+
+For reference, these are the definitions of the four pads to which the [HardMount connector](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) attaches :
+* Top left: SDA
+* Top right: SCL
+* Bottom left: VCC (3.3V to 5V)
+* Bottom right: GND
 
 
 ## Firmware
@@ -247,25 +287,6 @@ void init(){
     myTPRH.begin();
 }
 ```
-
-## Housing and cabling
-
-![Haar: exploded view](Documentation/images/Haar_v010_and_housing_exploded_20200228.png)
-
-### Parts required
-
-* [Sealing plug with cable](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497); these come in [a variety of lengths from 0.6 to 20 meters](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105) ([Digi-Key search results](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire)). You may also [attach a plug to your own cable](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/FieldAttachable/200ARS7).
-* [3D-printed housing barrel](3Dprint), tapped (see below). We recommmend light-colored plastic to reduce radiative heating.
-* [4-pin hard mount plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165)
-* [Amphenol breathable vent](https://www.digikey.com/product-detail/en/amphenol-ltw/VENT-PS1NGY-O8002/1754-1221-ND/7898276)
-
-### Tapping the housing
-
-3D-printed housing barrel tap dimensions:
-* Cable side: M16 x 1.5
-* Vent side: M12 x 1.5
-
->> @bschulz1701: what pinout colors
 
 ## Characterization
 
