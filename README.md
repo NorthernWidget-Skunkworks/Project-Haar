@@ -256,7 +256,7 @@ String data;
 
 // Instantiate classes
 Haar myTPRH;
-Resnik Logger();
+Resnik Logger;
 
 // Empty header to start; will include sensor labels and information
 String Header = "";
