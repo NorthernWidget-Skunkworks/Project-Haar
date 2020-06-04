@@ -166,7 +166,7 @@ This code is intended for any generic Arduino system.
 
 ```c++
 // Include the Haar library
-#include "Haar"
+#include "Haar.h"
 
 // Declare variables -- just as strings
 String header;
