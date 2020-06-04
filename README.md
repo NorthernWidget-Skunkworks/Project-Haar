@@ -223,20 +223,20 @@ uint32_t updateRate = 60;
 void setup(){
     Header = Header + myTPRH.getHeader();
     Logger.begin(I2CVals, sizeof(I2CVals), Header);
-    init();
+    initialize();
 }
 
 void loop(){
-    init();
+    initialize();
     Logger.Run(update, updateRate);
 }
 
 String update() {
-    init();
+    initialize();
     return myTPRH.getString();
 }
 
-void init(){
+void initialize(){
     myTPRH.begin();
 }
 ```
@@ -270,20 +270,20 @@ uint32_t updateRate = 60;
 void setup(){
     Header = Header + myTPRH.getHeader();
     Logger.begin(I2CVals, sizeof(I2CVals), Header);
-    init();
+    initialize();
 }
 
 void loop(){
-    init();
+    initialize();
     Logger.Run(update, updateRate);
 }
 
 String update() {
-    init();
+    initialize();
     return myTPRH.getString();
 }
 
-void init(){
+void initialize(){
     myTPRH.begin();
 }
 ```
