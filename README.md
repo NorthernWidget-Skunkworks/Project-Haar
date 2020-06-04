@@ -221,7 +221,7 @@ uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH Symbiont-LiDAR
 uint32_t updateRate = 60;
 
 void setup(){
-    Header = Header + myTPRH.GetHeader();
+    Header = Header + myTPRH.getHeader();
     Logger.begin(I2CVals, sizeof(I2CVals), Header);
     init();
 }
@@ -232,8 +232,8 @@ void loop(){
 }
 
 String update() {
-    init()
-    return myTPRH.GetString();
+    init();
+    return myTPRH.getString();
 }
 
 void init(){
@@ -268,7 +268,7 @@ uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH Symbiont-LiDAR
 uint32_t updateRate = 60;
 
 void setup(){
-    Header = Header + myTPRH.GetHeader();
+    Header = Header + myTPRH.getHeader();
     Logger.begin(I2CVals, sizeof(I2CVals), Header);
     init();
 }
@@ -279,8 +279,8 @@ void loop(){
 }
 
 String update() {
-    init()
-    return myTPRH.GetString();
+    init();
+    return myTPRH.getString();
 }
 
 void init(){
