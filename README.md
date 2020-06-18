@@ -299,5 +299,18 @@ void initialize(){
 >> @bschulz1701: Application note about when to use the cap? Notes about the IP ratings of the devices and practical ratings as well? And I've been looking for a M12 vent without any membrane so it can still physically protect the sensor (or act as a roof for rain) but have not yet found one. Thoughts on this?
 >> @awickert: The cap would desire to be used when there is the potential for the device to become fully submerged and slow response time is not a problem (for getting system averages instead of response time or quick variance). All elements of the device (uncapped) are rated to >IP67, however, the conformal coating of the board is not specifically rated for any pressure. It would likely survive breif immersion but not for extended periods of time. As for the a cap with no membrane: since be 3D print the body, we would just design a body with a "roof" instead of a thread at the top, and holes or slots in the side, whichever we desire. Then instead of replacing the end cap, you just replace the entire body (which just screws on to the bottom). This would actually make it a bit easier to make, since it would be one less thread that would need to be made by hand.
 
-<br>
+## Acknowledgments
+
+Support for this project provided by:
+
+<img src="https://pbs.twimg.com/profile_images/1139626463932637186/qCak0yvY_400x400.png" alt="UMN ESCI" width="240px">
+<br/>
+<br/>
+<img src="https://www.nsf.gov/news/mmg/media/images/nsf_logo_f_ba321daf-8607-41d7-94bc-1db6039d7893.jpg" alt="NSF" width="240px">
+<br/>
+<br/>
+<img src="https://ane4bf-datap1.s3-eu-west-1.amazonaws.com/wmocms/s3fs-public/styles/featured_media_detail/public/advanced_page/featured_media/wmologo2016_fulltext_horizontal_rgb_en-2.jpg?C4guHHfFZ0Uv029Eo5AvJLFg6nMR47hI&itok=NVNNIT7H" alt="WMO" width="240px">
+
+<br/>
+<br/>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
