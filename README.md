@@ -106,8 +106,8 @@ Here we assume that you are using standard AlphaWire cables with waterproof atta
 
 | **Color** | **Connection** |
 |-----------|----------------|
-| White     | V+ (3.3-5.0 V) |
-| Brown     | GND            |
+| Brown     | V+ (3.3-5.0 V) |
+| White     | GND            |
 | Black     | SDA            |
 | Blue      | SCL            |
 
@@ -199,7 +199,7 @@ void loop(){
 The [Margay data logger](github.com/NorthernWidget-Skunkworks/Project-Margay) is the lightweight and low-power open-source data-logging option from Northern Widget. It saves data to a local SD card and includes on-board status measurements and a low-drift real-time clock. We have written [a library to interface with the Margay](github.com/NorthernWidget-Skunkworks/Margay_Library), which can in turn be used to link the Margay with sensors.
 
 ```c++
-// Include the Symbiont library
+// Include the libraries
 #include "Margay.h"
 #include "Haar.h"
 
@@ -214,7 +214,7 @@ Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
 // Empty header to start; will include sensor labels and information
 String Header = "";
 
-// I2CVals for Symbiont
+// I2CVals for Haar
 uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH Symbiont-LiDAR
 
 //Number of seconds between readings
@@ -246,7 +246,7 @@ void initialize(){
 >> Currently nearly identical to Margay code, by design. Add telemetry with Particle Boron.
 
 ```c++
-// Include the Symbiont library
+// Include the libraries
 #include "Resnik.h"
 #include "Haar.h"
 
@@ -261,7 +261,7 @@ Resnik Logger;
 // Empty header to start; will include sensor labels and information
 String Header = "";
 
-// I2CVals for Symbiont
+// I2CVals for Haar
 uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH Symbiont-LiDAR
 
 //Number of seconds between readings
