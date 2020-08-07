@@ -42,15 +42,15 @@ uint8_t Config = 0; //Global config value
 uint8_t Reg[10] = {0}; //Initialize registers
 bool Sample = true; //Flag used to start a new converstion
 bool Sleep = false; //Used to put the device into deep sleep //ADD
-bool Startup = false; 
+bool Startup = false;
 
 uint16_t ST, SRH; //Global values for RH sensor (FIX!!!!)
 
-volatile uint8_t ADR = 0x40; //Use arbitraty address, change using generall call??
+volatile uint8_t ADR = 0x42; //Use arbitraty address, change using generall call??
 
 SlowSoftI2CMaster si = SlowSoftI2CMaster(PIN_C4, PIN_C5, true);  //Initialize software I2C
 
-volatile bool StopFlag = false; //Used to indicate a stop condition 
+volatile bool StopFlag = false; //Used to indicate a stop condition
 volatile uint8_t RegID = 0; //Used to denote which register will be read from
 volatile bool RepeatedStart = false; //Used to show if the start was repeated or not
 
@@ -67,7 +67,7 @@ void setup() {
 
   	si.i2c_init(); //Begin I2C master
   	// Serial.begin(4800); //DEBUG!
-  	RHreset(); //Reset RH sensor on startup 
+  	RHreset(); //Reset RH sensor on startup
   	PresReset(); //Reset pressure sensor on startup
 
   	WriteByte(LPS35HW_ADDR, LPS35HW_CTRL_REG3, 0x40);; //Setup 50Hz data rate //DEBUG!
@@ -77,25 +77,25 @@ void setup() {
 void loop() {
 	Sample = BitRead(Reg[0], 0);
 
-	if(Sample == true || Startup == false) {  //FIX!!! Make first conversion cleaner 
+	if(Sample == true || Startup == false) {  //FIX!!! Make first conversion cleaner
 		WriteByte(LPS35HW_ADDR, LPS35HW_CTRL_REG2, LPS35HW_CTRL_REG2_DEFAULT | 0x01); //Set ONE_SHOT bit in order to trigger new conversion for pressure
 		readRH(); //Get new temp/RH values
 		SplitAndLoad(0x04, ST); //Load temp from RH sensor
-		SplitAndLoad(0x09, SRH); //Load RH 
-		ReadPres(); //FIX!!! Make non-blocking/parellel conversion 
+		SplitAndLoad(0x09, SRH); //Load RH
+		ReadPres(); //FIX!!! Make non-blocking/parellel conversion
 
 		Reg[0] = Reg[0] & 0xFE; //Clear sample bit in register
 		Sample = false; //Clear sample bit
-		Startup = true; //Set after first conversion 
+		Startup = true; //Set after first conversion
 	}
 
-	//Sleep after loading registers 
+	//Sleep after loading registers
 	// ADCSRA &= ~(1<<ADEN); //Disable ADC
 	// SPCR   &= ~_BV(SPE); //Disable SPI
 	//    PRR = 0xFF;
   	digitalWrite(15, LOW); //DEBUG!
 
-	if(Sleep) set_sleep_mode(SLEEP_MODE_PWR_DOWN);  
+	if(Sleep) set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	else set_sleep_mode(SLEEP_MODE_STANDBY);
 	sleep_enable();
 	sleep_mode(); //Waits here while in sleep mode
@@ -143,7 +143,7 @@ void heater(boolean h) {
 
 //   return ST;
 // }
-  
+
 
 // uint16_t readHumidity(void) {
 //   if (! readTempHum()) return NAN;
@@ -155,18 +155,18 @@ bool ReadPres(void) {
 	unsigned long Timeout = millis();
 	bool Done = false; //Flag to wait for new data
 	while((millis() - Timeout) < ReadTimeout && !Done) {
-		if(BitRead(ReadByte(LPS35HW_ADDR, LPS35HW_CTRL_REG2), 0) == 0) { //Wait for ONE_SHOT to be cleared 
-			Done = true; //Set flag 
+		if(BitRead(ReadByte(LPS35HW_ADDR, LPS35HW_CTRL_REG2), 0) == 0) { //Wait for ONE_SHOT to be cleared
+			Done = true; //Set flag
 		}
 	}
-	if(Done) {  //If read succesfully 
+	if(Done) {  //If read succesfully
 		Reg[0x06] = ReadByte(LPS35HW_ADDR, LPS35HW_PRESS_OUT_XL); //Read out LSB
 		Reg[0x07] = ReadByte(LPS35HW_ADDR, LPS35HW_PRESS_OUT_L); //Read out Mid byte
 		Reg[0x08] = ReadByte(LPS35HW_ADDR, LPS35HW_PRESS_OUT_H); //Read out MSB
 
-		Reg[0x02] = ReadByte(LPS35HW_ADDR, LPS35HW_TEMP_OUT_L); //Read out LSB 
+		Reg[0x02] = ReadByte(LPS35HW_ADDR, LPS35HW_TEMP_OUT_L); //Read out LSB
 		// Reg[0x02] = 10;
-		Reg[0x03] = ReadByte(LPS35HW_ADDR, LPS35HW_TEMP_OUT_H); //Read out MSB 
+		Reg[0x03] = ReadByte(LPS35HW_ADDR, LPS35HW_TEMP_OUT_H); //Read out MSB
 	}
 	return Done; //Return valid status
 }
@@ -175,7 +175,7 @@ boolean readRH(void) {
   uint8_t readbuffer[6];
 
   writeCommand(SHT31_MEAS_HIGHREP);
-  
+
   delay(30);  //FIX! Read byte and test for NACK value
   // Wire.requestFrom(SHT31_ADDR, (uint8_t)6);
   si.i2c_start((SHT31_ADDR << 1) | READ);
@@ -205,14 +205,14 @@ boolean readRH(void) {
 //   stemp /= 0xffff;
 //   stemp = -45 + stemp;
 //   temp = stemp;
-  
+
 // //  Serial.print("SRH = "); Serial.println(SRH);
 //   double shum = SRH;
 //   shum *= 100;
 //   shum /= 0xFFFF;
-  
+
 //   humidity = shum;
-  
+
   return true;
 }
 
@@ -221,7 +221,7 @@ void writeCommand(uint16_t cmd) {
   si.i2c_start((SHT31_ADDR << 1) | WRITE);
   si.i2c_write(cmd >> 8);
   si.i2c_write(cmd & 0xFF);
-  // Wire.endTransmission();  
+  // Wire.endTransmission();
   si.i2c_stop();
 }
 
@@ -240,7 +240,7 @@ uint8_t crc8(const uint8_t *data, int len)
 
   const uint8_t POLYNOMIAL(0x31);
   uint8_t crc(0xFF);
-  
+
   for ( int j = len; j; --j ) {
       crc ^= *data++;
 
@@ -304,7 +304,7 @@ uint8_t WriteWord_LE(uint8_t Adr, uint8_t Command, unsigned int Data)  //Writes 
 // 	uint8_t Error = si.i2c_write(NewConfig);
 // 	si.i2c_stop();
 // 	if(Error == true) {
-// 		Config = NewConfig; //Set global config if write was sucessful 
+// 		Config = NewConfig; //Set global config if write was sucessful
 // 		return 0;
 // 	}
 // 	else return -1; //If write failed, return failure condition
@@ -390,8 +390,8 @@ boolean addressEvent(uint16_t address, uint8_t count)
 }
 
 void requestEvent()
-{	
-	//Allow for repeated start condition 
+{
+	//Allow for repeated start condition
 	if(RepeatedStart) {
 		for(int i = 0; i < 2; i++) {
 			Wire.write(Reg[RegID + i]);
@@ -402,11 +402,11 @@ void requestEvent()
 	}
 }
 
-void receiveEvent(int DataLen) 
+void receiveEvent(int DataLen)
 {
     //Write data to appropriate location
     if(DataLen == 2){
-	    //Remove while loop?? 
+	    //Remove while loop??
 	    while(Wire.available() < 2); //Only option for writing would be register address, and single 8 bit value
 	    uint8_t Pos = Wire.read();
 	    uint8_t Val = Wire.read();
@@ -419,7 +419,7 @@ void receiveEvent(int DataLen)
 	}
 }
 
-void stopEvent() 
+void stopEvent()
 {
 	StopFlag = true;
 	//End comunication
