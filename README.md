@@ -94,6 +94,21 @@ After finishing the main board assembly, solder the HardMount plug onto the four
 * [4-pin HardMount plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165)
 * [Amphenol breathable vent](https://www.digikey.com/product-detail/en/amphenol-ltw/VENT-PS1NGY-O8002/1754-1221-ND/7898276)
 
+#### Soldering the HardMount attachment to your board
+
+If it is not already attached, you will need to solder the [4-pin HardMount plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) onto the four SMD pads at the end of the board far from the isolated humidity sensor. You should do so with the notch (for plug orientation) at the bottom side of the board.
+
+Our recommendation for by-hand assembly:
+* Add small pillows of solder to each of the four pads, enough to create contact with the HardMount solder cups but not so much that it is not possible to slide the HardMount plug over them.
+* Slide the HardMount plug on; it will take a bit of finesse to keep it from being pushed off of the solder pillows.
+* Using some Blu Tack (or equivalent), fix the board and HardMount plug in place
+* Double-check that the notch in the HardMount plug is on the back side of the board
+* Solder on the first connection
+* Check whether the board is straight; reflow the solder as needed until the connection is secure
+* Solder the second connection
+* Flip the board, ensuring that it is straight (if not, make changes)
+* Solder the other two solder-cup connections
+
 #### Tapping the housing
 
 3D-printed housing barrel tap dimensions:
@@ -102,7 +117,7 @@ After finishing the main board assembly, solder the HardMount plug onto the four
 
 #### Cable
 
-Here we assume that you are using standard AlphaWire cables with waterproof attachments, as linked above. Because of the wire insulation colors available for these cables, **our HardMount devices do NOT match standard wire-color definitions**. Wire-color definitions are:
+Here we assume that you are using [standard Alpha Wire cables with waterproof attachments]([Alpha Wire 5004C](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976). Because of the wire insulation colors available for these cables and the locations of their attachment points to the [4-pin "HardMount" plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) ([3D model](https://www.traceparts.com/en/product/allied-electronics-automation-m12-panel-mnt-male-4-way?CatalogPath=TRACEPARTS%3ATP09002002001004&Product=10-12012018-106023&PartNumber=1838893-2)), **our HardMount devices do NOT match standard wire-color definitions (or any kind of standard)**. Wire-color definitions are:
 
 | **Color** | **Connection** |
 |-----------|----------------|
