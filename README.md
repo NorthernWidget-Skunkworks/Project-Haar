@@ -121,17 +121,17 @@ Here we assume that you are using [standard Alpha Wire cables with waterproof at
 
 | **Color** | **Connection** |
 |-----------|----------------|
-| Brown     | V+ (3.3-5.0 V) |
+| Brown     | V+ (3.3-5.5 V) |
 | White     | GND            |
 | Black     | SDA            |
 | Blue      | SCL            |
 
 >> @bschulz1701: is the voltage range correct?
 
-For reference, these are the definitions of the four pads to which the [HardMount connector](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) attaches :
+For reference, these are the definitions of the four pads to which the [HardMount connector](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) attaches:
 * Top left: SDA
 * Top right: SCL
-* Bottom left: VCC (3.3V to 5V)
+* Bottom left: VCC (3.3V to 5.5V)
 * Bottom right: GND
 
 
