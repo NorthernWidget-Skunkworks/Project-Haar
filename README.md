@@ -62,7 +62,7 @@ Determined to avoid future issues with persistently condensing humidity, we work
 * Open-source licensing via GNU GPL 3.0
 
 ### Weatherproofing and enclosure
-* Low-VOC conformal coating
+* Low-VOC conformal coating as recommended on Page 3 of the [humidity and temperature sensor data sheet](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Application_Note/Sensirion_Humidity_Sensors_Handling_Instructions.pdf). We used [Dow Corning 1-2577 Low VOC Conformal Coating](https://www.digikey.com/product-detail/en/1-2577+CONFORMAL+CTG+453G/2275-1-2577CONFORMALCTG453G-ND/11494980/?itemSeq=337863596)
 * Fully sealed housing with removable [breathable-membrane (IP68) vent](https://www.digikey.com/product-detail/en/amphenol-ltw/VENT-PS1NGY-O8002/1754-1221-ND/7898276)
 
 ![Haar: in housing](Documentation/images/Haar_v010_in_housing_20200228.png)
