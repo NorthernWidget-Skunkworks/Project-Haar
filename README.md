@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/177828982.svg)](https://zenodo.org/badge/latestdoi/177828982)
+
 # Project-Haar
 
 ***Mechanical, electrical, and firmware files for a rugged and submersible temperature, pressure, and relative-humidity sensor***
