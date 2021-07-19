@@ -261,13 +261,13 @@ void initialize(){
 }
 ```
 
-### Northern Widget Resnik code
+### Northern Widget Okapi code
 
 >> Currently nearly identical to Margay code, by design. Add telemetry with Particle Boron.
 
 ```c++
 // Include the libraries
-#include "Resnik.h"
+#include "Okapi.h"
 #include "Haar.h"
 
 // Declare variables -- just as strings
@@ -276,7 +276,7 @@ String data;
 
 // Instantiate classes
 Haar myTPRH;
-Resnik Logger;
+Okapi Logger;
 
 // Empty header to start; will include sensor labels and information
 String Header = "";
