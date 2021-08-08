@@ -155,7 +155,7 @@ Many devices exist to upload firmware, including:
 
 **IMPORTANT:** The Haar has a [half-sized (0.05" pitch) ICSP header](https://www.digikey.com/product-detail/en/samtec-inc/FTS-103-01-L-D/SAM1156-03-ND/1109979). Therefore, you will need to have the appropriate 2x3-pin header to form a connection.
 
-***Note: be sure to download and/or update drivers for your ISP***
+***Note: Be sure to download and/or update drivers for your ISP***
 
 ### Uploading the firmware
 
