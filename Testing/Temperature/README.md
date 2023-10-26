@@ -15,9 +15,9 @@ This is evaluated for the data collected and found to be **approximately 13.5 mi
 
 ![Step Response](TempResponse.png)
 
-[Python](TempAnalysis.py)
+[Python](TemperatureAnalysis.py)
 
-[Jupyter Notebook](TempAnalysis.ipynb)
+[Jupyter Notebook](TemperatureAnalysis.ipynb)
 
 
 ### Data
