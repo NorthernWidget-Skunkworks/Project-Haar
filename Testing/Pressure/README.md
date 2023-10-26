@@ -17,12 +17,17 @@ For both sensors the pressure before and after release is within sensor specs (4
 
 A basic plot of the response is created using [StepChangePlot](StepChangePlot.py) Python script - this script prints the resulting trimmed data and creates a simple plot
 
+<!-- ![Step Response](StepChangePlot.pdf) -->
 ### Data
 
-[File](StepChangeData.txt)
+[File](StepChangeData.csv)
+
 Measured pressure before over pressure - 976.7 mBar
+
 Measured pressure before release - 1003.2 mBar 
+
 Measure pressure after release - 976.6 mBar
 
 Sensor A - Haar sensor with solid 3D printed enclosure and Gore-Tex vent
+
 Sensor B - Haar sensor with open 3D printed enclosure 

@@ -19,4 +19,5 @@ This is evaluated for the data collected and found to be **approximately 54 minu
 <!-- [File](StepChangeData.txt) -->
 
 Sensor A - Haar sensor with solid 3D printed enclosure and Gore-Tex vent
+
 Sensor B - Haar sensor with open 3D printed enclosure 
