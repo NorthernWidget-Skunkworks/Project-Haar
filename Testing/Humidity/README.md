@@ -14,9 +14,16 @@ Haar data was logged to a computer using the generic Haar [DataRecorder](../Data
 The sensor with an open enclosure has an almost immediate response, as expected. This is used to establish a start time of the test. We then identify the equilibrium value (max value measured by the sensor in the vented enclosure). The time constant of the system (&tau;) is defined as the time in which is takes the system to reach FinalVal x (1 - 1/e) which is equal to 0.6321 x FinalVal. 
 
 This is evaluated for the data collected and found to be **approximately 54 minutes**. 
+
+![Step Response](HumidityResponse.png)
+
+[Python](HumidityAnalysis.py)
+
+[Jupyter Notebook](HumidityAnalysis.ipynb)
+
 ### Data
 
-<!-- [File](StepChangeData.txt) -->
+[File](Data.csv)
 
 Sensor A - Haar sensor with solid 3D printed enclosure and Gore-Tex vent
 
