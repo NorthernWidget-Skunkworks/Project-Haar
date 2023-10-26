@@ -15,7 +15,7 @@ Haar data was logged to a computer using the generic Haar [DataRecorder](../Data
 
 For both sensors the pressure before and after release is within sensor specs (4 mBar absolute error) and response time difference is insignificant between a Gore-Tex vent and an open housing. In both cases system fully responds well within 1 second
 
-A basic plot of the response is created using [PresureAnalysis](PresureAnalysis.py) Python script - this script prints the resulting trimmed data and creates a simple plot
+A basic plot of the response is created using [PressureAnalysis](PressureAnalysis.py) Python script - this script prints the resulting trimmed data and creates a simple plot
 
 ![Step Response](PressureResponse.png)
 
@@ -25,7 +25,7 @@ A basic plot of the response is created using [PresureAnalysis](PresureAnalysis.
 
 ### Data
 
-[File](StepChangeData.csv)
+[File](Data.csv)
 
 Measured pressure before over pressure - 976.7 mBar
 
