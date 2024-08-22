@@ -103,10 +103,22 @@ After finishing the main board assembly, solder the HardMount plug onto the four
 
 ![Haar: exploded view](Documentation/images/Haar_v010_and_housing_exploded_20200228.png)
 
+Two different housings have been designed to be used in different situations depending on how much robustness is required by the sensor. 
+**Closed:**
+For maximal robustness a [sealed IP67 rated housing](Mechanical/ClosedBody/ClosedBody.stl) was designed. This housing can be constructed using FDM printing with ABS plastic and acetone smoothing - an [FDM optimized version](Mechanical/ClosedBody_FDM/ClosedBody_FDM.stl) of the design was made featuring an eyelet to hang the enclosure from during the smoothing process. However, results will be significantly better with PA12 SLS nylon - readily available from many print houses.
+
+![Render of Closed Enclosure](Documentation/images/ClosedEnclosureRender.png)
+
+**Open:**
+For maximal responsiveness an [open structure enclosure](Mechanical/OpenBody/OpenBody.stl) was designed to allow airflow while still protecting the sensor from mechanical damage. This enclosure has been tested with FDM and SLA printing, methods will depend on your desired material properties.
+
+![Render of Closed Enclosure](Documentation/images/OpenEnclosureRender.png)
+
+
 #### Parts required
 
 * Sealing plug with cable such as this [-40 degree PVC-jacketed one](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497) or [this set of Digi-Key search results for all those that are 3 meters or less in both -40 degree rated PVC and in ](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?k=&pkeyword=&sv=0&pv2331=312745&sf=0&FV=-1%7C216%2C2344%7C346572%2C2346%7C369969%2C2352%7C387800%2C2353%7C421432%2C2380%7C203167%2C-8%7C448%2C77%7C172800%2C77%7C298043%2C77%7C62398&quantity=&ColumnSort=0&page=1&pageSize=25); these come in [a variety of lengths from 0.6 to 20 meters](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105) ([Digi-Key search results](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire)). You may also [attach a plug to your own cable](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/FieldAttachable/200ARS7). Note that I2C communications become iffy for any cable longer than 3 meters.
-* [3D-printed housing barrel](3Dprint), tapped (see below). We recommend light-colored plastic to reduce radiative heating.
+* [3D-printed housing barrel](Mechanical/ClosedBody_FDM), tapped (see below). We recommend light-colored plastic to reduce radiative heating.
 * [4-pin HardMount plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165)
 * [Amphenol breathable vent](https://www.digikey.com/product-detail/en/amphenol-ltw/VENT-PS1NGY-O8002/1754-1221-ND/7898276)
 
@@ -135,6 +147,11 @@ Our recommendation for by-hand assembly:
 #### Cable
 
 Here we assume that you are using [standard Alpha Wire cables with waterproof attachments]([Alpha Wire 5004C](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976). Because of the wire insulation colors available for these cables and the locations of their attachment points to the [4-pin "HardMount" plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) ([3D drawing](http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1838893-2&DocType=Customer+View+Model&DocLang=English)), **our HardMount devices do NOT match standard wire-color definitions (or any kind of standard)**. Wire-color definitions are:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="Documentation/images/Pinout_LIGHT.png">
+  <img alt="Haar Connector Pinout" src="Documentation/images/Pinout.png">
+</picture>
 
 | **Color** | **Connection** |
 |-----------|----------------|
@@ -341,7 +358,7 @@ void initialize(){
 <!-- ![Lab fridge test](Documentation/images/Haar_T9602_vent_test_lab_fridge.png)
 
 ***Response-time testing.*** *Our initial tests demonstrate that, with the vent detached, the Haar exhibits sensitivity and response time similar to the [T9602 temperature and relative humidity sensor](https://www.amphenol-sensors.com/images/stories/moisture-humidity/main-T9602-Mod-4.png). With the vent cap on, this response is dampened significantly.* -->
-This sensor was tested for using an impulse for each variable (temperature, pressure, humidity) and for each housing type (closed, open). The details of each of these evaluations can be found in the testing documentation: [Temperature](Testing/Temperature/README.md), [Pressure](Testing/Pressure/README.md), [Humidity](Testing/Humidity/README.md). A summary of these results is presented here.
+This sensor was tested for using an impulse for each variable (temperature, pressure, humidity) and for each housing type (closed, open). The details of each of these evaluations can be found in the testing documentation: [Temperature](Testing/Temperature/README.md), [Pressure](Testing/Pressure/README.md), [Humidity](Testing/Humidity/README.md). A summary of these results, along with visuals of the step response, is presented here.
 
 Approximate time to equilibrium for each variable and sensor type
 | **Sensor** | Temperature | Pressure | Humidity | 
@@ -349,6 +366,10 @@ Approximate time to equilibrium for each variable and sensor type
 | Control | 105s | &lt;1s | 18 min |
 | Haar, Closed | 75s | &lt;1s | 31.75 min |
 | Haar, Open | 12.5 min | &lt;1s | 10.25 min |
+
+![Temperature Step Response Graph](Testing/Temperature/TempResponse.png)
+
+![Humidity Step Response Graph](Testing/Humidity/HumidityResponse.png)
 
 
 This response time information should serve as a guide to the choice of housing. In situations where very fast response time is required *and* the sensor will not be subjected to environmental extremes (e.g. in a radiation shield on a meteorological station) an open housing can be used. However, in cases where the hazards of the environment are a priority (e.g. a sensor in the flood plane of a river to calibrate a depth sensor) a closed housing should be used.
