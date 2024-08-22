@@ -17,6 +17,7 @@ Determined to avoid future issues with persistently condensing humidity, we work
 ## Technical specifications
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Documentation/images/Haar_v010_top_annotated_20200427_LIGHT.png">
+  <source media="(prefers-color-scheme: light)" srcset="Documentation/images/Haar_v010_top_annotated_20200427.png">
   <img alt="Haar bare board" src="Documentation/images/Haar_v010_top_annotated_20200427.png">
 </picture>
 <!-- ![Haar bare board](Documentation/images/Haar_v010_top_annotated_20200427.png) -->

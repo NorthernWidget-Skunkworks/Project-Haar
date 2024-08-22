@@ -40,7 +40,8 @@ Sensor B - Haar sensor with solid 3D printed enclosure and Gore-Tex vent
 An insulated box was constructed from 1.5 inch (3.81cm) thick Extruded Poly Styrene (XPS) insulation foam which has an R value (BTU / hr x ft^2 x &deg;F) of 7.5, creating a highly insulated test chamber. Overview of this box is shown in [Figure 1](images/Fig1.jpg) and measurments are shown in [Box Schematic](images/TempBoxDimensions.png). A series of holes are placed in the top of the box to allow entry for cables for test devices - surrounded by rubber stoppers. All edges of the box are sercured and sealed with foil tape to prevent heat loss through gaps.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/TempBoxDimensions_LIGHT.png">
-  <img alt="Haar bare board" src="images/TempBoxDimensions.png">
+  <source media="(prefers-color-scheme: light)" srcset="images/TempBoxDimensions_DARK.png">
+  <img alt="Thermal Box Dimensions" src="images/TempBoxDimensions_DARK.png">
 </picture>
 <!-- ![Box Schematic](images/TempBoxDimensions.png) -->
 
