@@ -87,6 +87,10 @@ Determined to avoid future issues with persistently condensing humidity, we work
 
 ### Sensor circuit board
 
+[Bill of Materials](Production/Haar_HardMount_BoM_0v1.csv)
+
+[PCB Gerber Files](Production/Gerbers_2020-02-20.zip)
+
 Assembling this sensor is possible by hand with sufficient skill and the following tools:
 * Temperature-controlled soldering iron
 * Hot-air rework station
