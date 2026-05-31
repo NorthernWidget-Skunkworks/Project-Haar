@@ -176,6 +176,81 @@ Using this ISP, upload (as of the time of writing): [the Arduino sketch in this 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
 
+## Register map and firmware internals
+
+The Haar firmware runs on an ATTiny1634 and exposes an I2C register map to the host logger. The default I2C address is `0x42`.
+
+The device exposes a flat, byte-addressable virtual address space. The master writes a 1-byte starting address, then reads up to 32 bytes in one transaction. Pages are 32-byte aligned.
+
+Two layouts exist: the **current firmware** (deployed) and the **proposed** layout under [NW-Device-Specification](https://github.com/NorthernWidget/NW-Device-Specification) Schema 1, which the firmware will be updated to implement.
+
+### Current register map (deployed firmware)
+
+10-byte array, no schema byte, no device name. The library reads one register at a time (no bulk page read). The master triggers a conversion by writing `0x01` to address `0x00`; the firmware clears bit 0 when the measurement is complete.
+
+```
+0x00        Config       bit 0 = sample trigger (master writes 1; cleared when done)
+0x01        —            unused
+0x02–0x03   Temp LPS35HW int16, raw (library: val/100.0 → °C)
+0x04–0x05   Temp SHT31   uint16, raw SHT31 counts (library: -45 + 175×val/65535 → °C)
+0x06–0x08   Pressure     24-bit, raw LPS35HW counts (library: val/4096.0 → hPa)
+0x09–0x0A   Humidity     uint16, raw SHT31 counts (library: 100×val/65535 → % RH)
+             ⚠ 0x0A is out of bounds — Reg[10] ends at 0x09
+```
+
+### Proposed register map (NW-Device-Specification Schema 1)
+
+Two 32-byte pages. Identity is EEPROM-backed; sensor data is SRAM-backed. No calibration page (both sensors are factory-calibrated with no user calibration step).
+
+**Page 0 (0x00–0x1F) — Identity (EEPROM)**
+
+```
+Block 0 (0x00–0x07)   Core identity
+  0x00        0x01              Schema (NW-Device-Specification v1)
+  0x01–0x04   'H','a','a','r'   Device name (ASCII)
+  0x05–0x07   0x00,0x00,0x00    Null padding
+
+Block 1 (0x08–0x0F)   Version
+  0x08        HW major
+  0x09        HW minor
+  0x0A        FW patch          (NW combined-repo convention)
+  0x0B–0x0D   0x00,0x00,0x00    Unused (combined repo)
+  0x0E–0x0F   0x00,0x00         Reserved
+
+Block 2 (0x10–0x17)   Serial number
+  0x10–0x11   0x48,0x01         Board type ('H' = 0x48, revision index 1)
+  0x12–0x13   [manufacture]     Group ID
+  0x14–0x15   [manufacture]     Unique ID
+  0x16–0x17   0x00,0x00         FirmwareID (legacy, reserved)
+
+Block 3 (0x18–0x1F)   Integrity + administration
+  0x18–0x1C   0x00 ×5           Reserved
+  0x1D        0x00              Magic byte (reserved; purpose TBD)
+  0x1E        [computed]        CRC-8 of bytes 0x00–0x1D
+  0x1F        0x42              I2C address (writable; 0xFF = use default)
+```
+
+**Page 1 (0x20–0x3F) — Sensor data (SRAM)**
+
+```
+Block 0 (0x20–0x27)   SHT31 — temperature + humidity
+  0x20        Status       bit 0=ready, bit 1=SHT31 fault, bit 2=LPS35HW fault
+  0x21–0x22   Temp SHT31   int16, 0.01 °C, little-endian
+  0x23–0x24   Humidity     uint16, 0.01 % RH, little-endian
+  0x25–0x27   Reserved
+
+Block 1 (0x28–0x2F)   LPS35HW — pressure + temperature
+  0x28–0x2B   Pressure     uint32, 0.01 hPa, little-endian
+  0x2C–0x2D   Temp LPS35HW int16, 0.01 °C, little-endian
+  0x2E–0x2F   Reserved
+
+Block 2–3 (0x30–0x3F)   Reserved
+```
+
+Check bit 0 of 0x20 before using any measurement. If clear, all other Page 1 bytes are stale.
+
+---
+
 ## Writing a program to connect to the Haar sensor
 
 Once the  is bootloaded and connected with a LiDAR Lite sensor, you should be able to use any standard Arduino device to connect to it and read its data.
