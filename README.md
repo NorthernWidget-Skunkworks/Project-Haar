@@ -280,10 +280,12 @@ Block 3 (0x18–0x1F)   Integrity + administration
 
 ```
 Block 0 (0x20–0x27)   SHT31 — temperature + humidity
-  0x20        Status       bit 0=ready, bit 1=SHT31 fault, bit 2=LPS35HW fault
+  0x20        Status       bit 0=ready, bit 1=SHT31 fault, bit 2=LPS35HW fault,
+                           bit 7=pan-fault
   0x21–0x22   Temp SHT31   int16, 0.01 °C, little-endian
   0x23–0x24   Humidity     uint16, 0.01 % RH, little-endian
-  0x25–0x27   Reserved
+  0x25–0x26   Reserved
+  0x27        Extended faults (reserved, 0x00)
 
 Block 1 (0x28–0x2F)   LPS35HW — pressure + temperature
   0x28–0x2B   Pressure     uint32, 0.01 hPa, little-endian
