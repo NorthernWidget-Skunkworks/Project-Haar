@@ -458,6 +458,19 @@ This response time information should serve as a guide to the choice of housing.
 
 
 
+## NW-Device-Specification — Schema 1, Page 0
+
+Implements [NW-Device-Specification](https://github.com/NorthernWidget/NW-Device-Specification) Schema 1. The 32-byte identity block (Page 0) is stored at the top of EEPROM:
+
+```
+Block 0:  Schema=0x01, Name='H','a','a','r',0x00,0x00,0x00
+Block 1:  HW major=[mfr], HW minor=[mfr], FW patch=[mfr], 0x00,0x00,0x00, Reserved
+Block 2:  Board type=0x4801 ('H'=0x48, rev 1), Group ID=[mfr], Unique ID=[mfr], FirmwareID=0x0000
+Block 3:  Reserved, Magic=0x00, CRC=[computed], I2C address=0x48
+```
+
+Legacy deployed units use I²C address `0x42` (pre-Schema-1).
+
 ## Acknowledgments
 
 Support for this project provided by:
